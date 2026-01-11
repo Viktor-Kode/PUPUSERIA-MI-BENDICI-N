@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "aboutUs": "Sobre Nosotros",
+    "menu": "Menú",
+    "gallery": "Galería",
+    "features": "Especiales y Eventos",
+    "contactUs": "Contáctanos"
+  },
+  "hero": {
+    "cantina": "PUPUSERIA MI BENDICIÓN",
+    "slides": {
+      "slide1": {
+        "title": "Rico y Saludable",
+        "description": "Disfruta de pupusas salvadoreñas auténticas hechas con ingredientes frescos y orgánicos. Saludable, delicioso y hecho con amor."
+      },
+      "slide2": {
+        "title": "Sabores Tradicionales",
+        "description": "Nuestra cocina te trae la auténtica cocina salvadoreña con ingredientes frescos, recetas tradicionales y opciones orgánicas."
+      },
+      "slide3": {
+        "title": "Fresco y Saludable",
+        "description": "Cada pupusa está hecha a mano con cuidado, usando los mejores ingredientes para una comida deliciosa y nutritiva."
+      }
+    },
+    "viewMenu": "Ver Menú",
+    "contactUs": "Contáctanos"
+  },
+  "menu": {
+    "title": "Nuestro Menú",
+    "subtitle": "Rico y Saludable",
+    "description": "Explora nuestras pupusas salvadoreñas auténticas y platos tradicionales. Filtra por estilo para encontrar tu favorito. Menú rotativo diario disponible.",
+    "headers": {
+      "name": "Nombre",
+      "style": "Estilo",
+      "price": "Precio"
+    },
+    "seasonal": {
+      "title": "Especiales Estacionales",
+      "subtitle": "Ofertas por Tiempo Limitado",
+      "description": "Estos artículos están disponibles por tiempo limitado. ¡No te los pierdas!",
+      "availableUntil": "Disponible hasta"
+    },
+    "catering": {
+      "title": "Catering y Pedidos Grandes",
+      "subtitle": "Perfecto para Eventos",
+      "description": "Haz que tu próximo evento sea memorable con nuestros paquetes de catering. Todos los paquetes incluyen configuración y se pueden personalizar según tus necesidades.",
+      "serves": "Sirve",
+      "leadTime": "Tiempo de anticipación",
+      "days": "días"
+    },
+    "specialOrders": {
+      "title": "Pedidos Especiales y Prepedidos",
+      "subtitle": "Creaciones Personalizadas",
+      "description": "Realiza pedidos anticipados para artículos personalizados y ocasiones especiales. Los pedidos deben realizarse antes de la fecha límite.",
+      "orderBy": "Pedir antes del"
+    },
+    "events": {
+      "title": "Eventos y Popups",
+      "subtitle": "Encuéntranos por la Ciudad",
+      "description": "Únete a nosotros en estos próximos eventos y ubicaciones popup.",
+      "location": "Ubicación",
+      "featuredItems": "Artículos Destacados"
+    },
+    "footer": {
+      "orderingInfo": "Información de Pedidos"
+    }
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Nuestros Platos Firma",
+    "description": "Realiza un viaje visual a través de nuestros platos más populares y creaciones culinarias."
+  },
+  "features": {
+    "title": "Por Qué Elegirnos",
+    "subtitle": "Rico y Saludable - Saludable y Delicioso",
+    "feature1": {
+      "heading": "Ingredientes Orgánicos y Frescos",
+      "subheading": "Utilizamos ingredientes frescos y orgánicos para crear comida salvadoreña saludable y deliciosa."
+    },
+    "feature2": {
+      "heading": "Recetas Tradicionales",
+      "subheading": "Sabores auténticos salvadoreños transmitidos de generación en generación, hechos con amor y cuidado."
+    },
+    "feature3": {
+      "heading": "Opciones Saludables Disponibles",
+      "subheading": "Disfruta de nuestras opciones veganas, vegetarianas y sin gluten hechas con ingredientes de calidad."
+    },
+    "feature4": {
+      "heading": "Hecho Fresco Diariamente",
+      "subheading": "Cada pupusa está hecha a mano fresca diariamente. Nuestro menú rotativo asegura variedad y frescura."
+    }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "heading": "Rico y Saludable - Saludable y Delicioso",
+    "paragraph1": "En PUPUSERIA MI BENDICIÓN, te traemos pupusas salvadoreñas auténticas hechas con ingredientes frescos y orgánicos. Cada pupusa está hecha a mano con cuidado, usando recetas tradicionales y los mejores ingredientes de calidad. Nuestro compromiso es servir comida saludable y deliciosa que nutra tanto el cuerpo como el alma.",
+    "paragraph2": "Ofrecemos una variedad de opciones incluyendo pupusas veganas, vegetarianas y sin gluten, asegurando que todos puedan disfrutar de nuestros sabores auténticos. Nuestro menú rotativo diario incluye acompañamientos frescos, platos de desayuno tradicionales y artículos especiales, todos hechos con la misma dedicación a la calidad y la salud."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "heading": "Ponte en Contacto",
+    "form": {
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono (Opcional)",
+      "message": "Mensaje",
+      "submit": "Enviar",
+      "submitting": "Enviando...",
+      "placeholders": {
+        "fullName": "Juan Pérez",
+        "email": "juan.perez@ejemplo.com",
+        "phone": "+1234567890",
+        "message": "¿Cómo podemos ayudarte?"
+      }
+    },
+    "validation": {
+      "fullNameMin": "El nombre completo debe tener al menos 2 caracteres.",
+      "fullNameMax": "El nombre completo es demasiado largo.",
+      "emailInvalid": "Ingresa una dirección de correo electrónico válida.",
+      "phoneInvalid": "Ingresa un número de teléfono válido.",
+      "messageMin": "Por favor, cuéntanos cómo podemos ayudarte.",
+      "messageMax": "El mensaje es demasiado largo."
+    },
+    "messages": {
+      "success": "¡Recibimos tu mensaje. Te responderemos pronto!",
+      "error": "No pudimos enviar tu mensaje. Por favor, inténtalo de nuevo.",
+      "thanks": "¡Gracias! Recibimos tu mensaje y te responderemos pronto."
+    }
+  },
+  "footer": {
+    "description": "PUPUSERIA MI BENDICIÓN - Pupusas salvadoreñas auténticas hechas con ingredientes frescos y orgánicos. Rico y Saludable.",
+    "contactUs": "Contáctanos",
+    "address": "Tu Dirección, Ciudad, País",
+    "copyright": "© {year} PUPUSERIA MI BENDICIÓN. Todos los derechos reservados.",
+    "social": {
+      "visitProfile": "Visitar perfil social"
+    }
+  },
+  "common": {
+    "home": "Inicio",
+    "phone": "+1 (000) 000-0000",
+    "callReservations": "Llama a nuestro equipo de reservas al +1 (000) 000-0000",
+    "toggleMenu": "Alternar menú móvil",
+    "closeMenu": "Cerrar menú modal"
+  }
+}
+
