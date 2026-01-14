@@ -25,15 +25,32 @@ export const exportMenuPdf = (data: MenuPdfData) => {
     format: 'letter',
   })
 
+  // Theme colors matching globals.css
+  // Primary: #1A73E8 = RGB(26, 115, 232)
+  // Secondary: #f4eed7 = RGB(244, 238, 215)
+  // Deep: #2f2a1f = RGB(47, 42, 31)
+  const themeColors = {
+    primary: [26, 115, 232] as [number, number, number],
+    secondary: [244, 238, 215] as [number, number, number],
+    deep: [47, 42, 31] as [number, number, number],
+    primaryLight: [173, 216, 255] as [number, number, number], // Light blue for borders
+    // Hex strings for textColor in autoTable
+    primaryHex: '#1A73E8',
+    deepHex: '#2f2a1f',
+    primaryLightHex: '#ADD8FF',
+  }
+
   const marginX = 48
   let cursorY = 64
 
   doc.setFont('helvetica', 'bold')
   doc.setFontSize(24)
+  doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
   doc.text(`${vendorName} Menu`, marginX, cursorY)
 
   doc.setFontSize(11)
   doc.setFont('helvetica', 'normal')
+  doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
   cursorY += 24
   doc.text(`Generated on ${new Date().toLocaleDateString()}`, marginX, cursorY)
 
@@ -88,7 +105,9 @@ export const exportMenuPdf = (data: MenuPdfData) => {
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(16)
+    doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
     doc.text(sectionTitle, marginX, startY)
+    doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
     startY += 20
 
     const tableData = items.map((item) => {
@@ -112,15 +131,15 @@ export const exportMenuPdf = (data: MenuPdfData) => {
       styles: {
         font: 'helvetica',
         fontSize: 11,
-        textColor: '#2f2a1f',
+        textColor: themeColors.deepHex,
         cellPadding: 8,
         valign: 'middle',
-        lineColor: '#f1e3b2',
+        lineColor: themeColors.primaryLightHex,
         lineWidth: 0.4,
       },
       headStyles: {
-        fillColor: [224, 193, 118],
-        textColor: '#2f2a1f',
+        fillColor: themeColors.primary,
+        textColor: '#ffffff', // White text on primary background
         fontStyle: 'bold',
       },
       columnStyles: {
@@ -153,7 +172,9 @@ export const exportMenuPdf = (data: MenuPdfData) => {
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(16)
+    doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
     doc.text('Catering Packages', marginX, cursorY)
+    doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
     cursorY += 20
 
     catering.forEach((pkg) => {
@@ -196,7 +217,9 @@ export const exportMenuPdf = (data: MenuPdfData) => {
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(16)
+    doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
     doc.text('Special Orders & Preorders', marginX, cursorY)
+    doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
     cursorY += 20
 
     specialOrders.forEach((order) => {
@@ -242,7 +265,9 @@ export const exportMenuPdf = (data: MenuPdfData) => {
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(16)
+    doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
     doc.text('Upcoming Events', marginX, cursorY)
+    doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
     cursorY += 20
 
     events.forEach((event) => {
@@ -328,7 +353,9 @@ export const exportMenuPdf = (data: MenuPdfData) => {
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(12)
+    doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
     doc.text('Dietary Information', marginX, legendY)
+    doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
 
     doc.setFont('helvetica', 'normal')
     doc.setFontSize(10)
@@ -364,6 +391,36 @@ export const exportMenuPdf = (data: MenuPdfData) => {
       legendX += textWidth
       currentLineWidth = legendX - marginX
     })
+
+    // Add business notes after dietary information
+    const businessNotes = [
+      'Daily menu includes a rotating main dish, sides, and dessert.',
+      'Not all items listed are available every day.',
+    ]
+
+    if (businessNotes.length > 0) {
+      currentY += lineHeight * 2 // Add spacing before business notes
+      
+      doc.setFont('helvetica', 'bold')
+      doc.setFontSize(12)
+      doc.setTextColor(themeColors.primary[0], themeColors.primary[1], themeColors.primary[2])
+      doc.text('Business Notes', marginX, currentY)
+      doc.setTextColor(themeColors.deep[0], themeColors.deep[1], themeColors.deep[2])
+      
+      doc.setFont('helvetica', 'italic')
+      doc.setFontSize(10)
+      currentY += 16
+
+      businessNotes.forEach((note) => {
+        // Check if we need a new page
+        if (currentY > doc.internal.pageSize.getHeight() - 40) {
+          doc.addPage()
+          currentY = 64
+        }
+        doc.text(sanitizeText(note), marginX, currentY)
+        currentY += lineHeight
+      })
+    }
   }
 
   const sanitizedVendorName = vendorName.toLowerCase().replace(/[^a-z0-9]+/g, '-')

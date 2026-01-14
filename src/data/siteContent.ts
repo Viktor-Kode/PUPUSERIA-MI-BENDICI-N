@@ -9,8 +9,6 @@ import { SpecialOrderType } from '@/app/types/specialOrders'
 import { EventType } from '@/app/types/events'
 import { VendorMetadata } from '@/app/types/vendor'
 
-// Header labels are now translated in components using translation keys:
-// 'nav.aboutUs', 'nav.menu', 'nav.gallery', 'nav.features', 'nav.contactUs'
 export const HeaderData: HeaderItem[] = [
   { label: 'nav.aboutUs', href: '/#aboutus' },
   { label: 'nav.menu', href: '/#menu-section' },
@@ -19,8 +17,6 @@ export const HeaderData: HeaderItem[] = [
   { label: 'nav.contactUs', href: '/#contact' },
 ]
 
-// Feature labels are now translated in components using translation keys:
-// 'features.feature1.heading', 'features.feature1.subheading', etc.
 export const FeaturesData: FeaturesType[] = [
   {
     imgSrc: '/images/Features/featureOne.svg',
@@ -86,7 +82,6 @@ export const GalleryImagesData: GalleryImagesType[] = [
 ]
 
 export const FullMenuData: FullMenuType[] = [
-  // ENTRÉES / MAIN DISHES
   {
     name: 'Revueltas Pupusa',
     style: 'Main Dish',
@@ -156,7 +151,6 @@ export const FullMenuData: FullMenuType[] = [
     description: 'Ingredients: Maseca flour, shrimp, mazola oil, cheese.',
     availability: 'standard',
   },
-  // SIDES
   {
     name: 'Beans',
     style: 'Side',
@@ -181,7 +175,6 @@ export const FullMenuData: FullMenuType[] = [
     dietary: ['vegetarian', 'gluten-free'],
     availability: 'standard',
   },
-  // ENTRÉE PLATES
   {
     name: 'Salvadoran Chicken Sandwich (Pan con Pollo)',
     style: 'Entrée Plate',
@@ -204,7 +197,6 @@ export const FullMenuData: FullMenuType[] = [
     description: 'Ingredients: Beans, plantains, chorizo or pork longaniza, bread, tortillas, tomatoes, onions, green chile.',
     availability: 'standard',
   },
-  // SPECIALTY ITEMS
   {
     name: 'Stuffed Chiles – Beef',
     style: 'Specialty',
@@ -221,7 +213,6 @@ export const FullMenuData: FullMenuType[] = [
     dietary: ['vegetarian', 'gluten-free'],
     availability: 'standard',
   },
-  // DRINKS
   {
     name: 'Salvadoran Horchata',
     style: 'Drink',
@@ -235,7 +226,7 @@ export const FullMenuData: FullMenuType[] = [
     style: 'Drink',
     price: 'Price TBD',
     description: 'Ingredients: Pineapple, panela sugar, cloves, plantain, basic cornstarch.',
-    dietary: ['vegetarian', 'gluten-free'],
+    dietary: ['vegan', 'vegetarian', 'gluten-free'],
     availability: 'standard',
   },
   {
@@ -250,7 +241,6 @@ export const FullMenuData: FullMenuType[] = [
 
 export const FooterLinkData: FooterLinkType[] = []
 
-// Catering packages
 export const CateringPackagesData: CateringPackageType[] = [
   {
     name: 'Taco Fiesta Package',
@@ -291,7 +281,6 @@ export const CateringPackagesData: CateringPackageType[] = [
   },
 ]
 
-// Special orders and preorders
 export const SpecialOrdersData: SpecialOrderType[] = [
   {
     name: 'Custom Birthday Cake Tamale',
@@ -321,14 +310,13 @@ export const SpecialOrdersData: SpecialOrderType[] = [
     customizationNotes:
       'Contact us at least 2 weeks in advance. Consultation includes tasting session.',
   },
-]// Events and popups
+]
+
 export const EventsData: EventType[] = [
   {
     name: 'Downtown Farmers Market',
     date: '2024-12-07',
     location: 'Main Street Plaza, Downtown',
-    // Google Maps embed URL - easily changeable by getting embed code from Google Maps
-    // To change: Go to Google Maps, search location, click Share > Embed a map, copy iframe src
     mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184132576!2d-73.98811768459418!3d40.75889597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus',
     description:
       'Join us every Saturday morning for fresh tacos and aguas frescas. Look for our bright orange tent!',
@@ -338,7 +326,6 @@ export const EventsData: EventType[] = [
     name: 'Holiday Popup at The Brewery',
     date: '2024-12-14',
     location: 'Local Craft Brewery, 123 Beer St',
-    // Alternative: Use coordinates to generate map URL
     coordinates: {
       lat: 40.7128,
       lng: -74.0060,
@@ -351,12 +338,12 @@ export const EventsData: EventType[] = [
     name: 'Food Truck Festival',
     date: '2024-12-21',
     location: 'City Park, Central Avenue',
-    // Google Maps embed URL - easily changeable
     mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.184132576!2d-73.98511768459418!3d40.75889597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1234567890124!5m2!1sen!2sus',
     description:
       'We will be serving our full menu at the annual food truck festival. Come early for best selection!',
   },
-]// Vendor metadata
+]
+
 export const VendorMetadataData: VendorMetadata = {
   vendorName: 'PUPUSERIA MI BENDICIÓN',
   contactInfo: {

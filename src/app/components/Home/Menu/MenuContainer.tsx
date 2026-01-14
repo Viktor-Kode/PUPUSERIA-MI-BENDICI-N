@@ -68,14 +68,23 @@ const MenuContainer = () => {
     return Array.from(allTags)
   }, [])
 
+  const businessNotes = [
+    'Daily menu includes a rotating main dish, sides, and dessert.',
+    'Not all items listed are available every day.',
+  ]
+
   return (
     <>
       <InteractiveMenu />
       {/* Dietary Legend - Right after menu sections */}
-      {allDietaryTags.length > 0 && (
+      {(allDietaryTags.length > 0 || businessNotes.length > 0) && (
         <div className='container py-8'>
           <div className='flex justify-center'>
-            <DietaryLegend iconSize={16} tags={allDietaryTags} />
+            <DietaryLegend 
+              iconSize={16} 
+              tags={allDietaryTags.length > 0 ? allDietaryTags : undefined}
+              businessNotes={businessNotes}
+            />
           </div>
         </div>
       )}
